@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+            prefHeight="700.0" prefWidth="900.0" styleClass="main-background" 
+            xmlns="http://javafx.com/javafx/21.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tdahapp.Controladores.ControladoresMenu">
+    <StackPane AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" 
+               AnchorPane.bottomAnchor="30.0">
+        <children>
+            <!-- Fondo del formulario con sombra -->
+            <Rectangle fill="white" width="600" height="640" arcWidth="20" arcHeight="20" styleClass="form-background">
+                <effect>
+                    <DropShadow radius="10" color="#00000080" />
+                </effect>
+            </Rectangle>
+            
+            <!-- Contenido del formulario -->
+            <VBox alignment="TOP_CENTER" spacing="15" maxWidth="480">
+                <padding>
+                    <Insets top="40" right="40" bottom="40" left="40"/>
+                </padding>
+                <children>
+                    <!-- Título -->
+                    <Label text="Registro" styleClass="title-label">
+                        <font>
+                            <Font name="System Bold" size="24"/>
+                        </font>
+                        <VBox.margin>
+                            <Insets bottom="30"/>
+                        </VBox.margin>
+                    </Label>
+                    
+                    <!-- Campos de nombre -->
+                    <VBox spacing="8" maxWidth="400" fillWidth="true">
+                        <Label text="Nombres" styleClass="field-label" />
+                        <TextField fx:id="nombres" promptText="Nombres" styleClass="text-field" maxWidth="Infinity" />
+                    </VBox>
+                    
+                    <!-- Apellidos en una fila -->
+                    <HBox spacing="20" maxWidth="400" fillHeight="true">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Apellido paterno" styleClass="field-label" />
+                            <TextField fx:id="apellidoPaterno" promptText="Apellido paterno" styleClass="text-field" maxWidth="Infinity" />
+                        </VBox>
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Apellido materno" styleClass="field-label" />
+                            <TextField fx:id="apellidoMaterno" promptText="Apellido materno" styleClass="text-field" maxWidth="Infinity" />
+                        </VBox>
+                    </HBox>
+                    
+                    <!-- Teléfono -->
+                    <VBox spacing="8" maxWidth="400" fillWidth="true">
+                        <Label text="Número telefónico" styleClass="field-label" />
+                        <TextField fx:id="numeroTelefono" promptText="A 10 dígitos" styleClass="text-field" maxWidth="Infinity" />
+                    </VBox>
+
+                    <!-- Separador -->
+                    <Separator maxWidth="400">
+                        <VBox.margin>
+                            <Insets top="15" bottom="15"/>
+                        </VBox.margin>
+                    </Separator>
+
+                    
+
+                    <!-- Campo de contraseña con botón mostrar/ocultar -->
+                    <VBox spacing="8" maxWidth="400" fillWidth="true">
+                        <Label text="Contraseña" styleClass="field-label" />
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <StackPane HBox.hgrow="ALWAYS">
+                                <children>
+                                    <PasswordField fx:id="contraseñaOculta" promptText="Al menos 8 caracteres" styleClass="password-field" maxWidth="Infinity" />
+                                    <TextField fx:id="contraseñaVisible" promptText="Al menos 8 caracteres" styleClass="password-field" visible="false" managed="false" maxWidth="Infinity"/>
+                                </children>
+                            </StackPane>
+                            <Button fx:id="btnToggleContraseña" focusTraversable="false">
+                                <graphic>
+                                    <ImageView fx:id="iconoContraseña" fitHeight="20" fitWidth="20" />
+                                </graphic>
+                            </Button>
+                        </HBox>
+                    </VBox>
+
+                    <!-- Campo de confirmar contraseña con botón mostrar/ocultar -->
+                    <VBox spacing="8" maxWidth="400" fillWidth="true">
+                        <Label text="Confirmar contraseña" styleClass="field-label" />
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <StackPane HBox.hgrow="ALWAYS">
+                                <children>
+                                    <PasswordField fx:id="confirmarContraseñaOculta" promptText="Ingrese la contraseña nuevamente" styleClass="password-field" maxWidth="Infinity"/>
+                                    <TextField fx:id="confirmarContraseñaVisible" promptText="Ingrese la contraseña nuevamente" styleClass="password-field" visible="false" managed="false" maxWidth="Infinity"/>
+                                </children>
+                            </StackPane>
+                            <Button fx:id="btnToggleConfirmar" focusTraversable="false">
+                                <graphic>
+                                    <ImageView fx:id="iconoConfirmarContraseña" fitHeight="20" fitWidth="20" />
+                                </graphic>
+                            </Button>
+                        </HBox>
+                    </VBox>
+
+
+                    <!-- Botón de registro -->
+                    <Button fx:id="btnRegistro" text="Registrarse" styleClass="register-button" prefWidth="180" prefHeight="40">
+                        <VBox.margin>
+                            <Insets top="30"/>
+                        </VBox.margin>
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Button>
+                </children>
+            </VBox>
+        </children>
+    </StackPane>
+</AnchorPane>
